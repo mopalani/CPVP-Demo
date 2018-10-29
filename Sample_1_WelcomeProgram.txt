@@ -1,0 +1,58 @@
+************************************************************************
+*            (C)  (COPYRIGHT WOOLWORTHS LIMITED.)                      *
+************************************************************************
+* OBJECT NAME   : ZGH_DEMO1_SAPWORLD
+* AUTHOR        : XMPYJ , Mohandoss Palanisamy
+* DATE CREATED  : 29.10.2018
+* FRICE ID      :
+* INPUT         :
+* OUTPUT        :
+* FREQUENCY     :
+*&---------------------------------------------------------------------*
+* DESCRIPTION   :
+*&---------------------------------------------------------------------*
+* MODIFICATION HISTORY:
+* TR.No        DATE          DEVELOPER        DESCRIPTION OF CHANGE
+*   29.10.2018    XMPYJ            Original Release
+*&---------------------------------------------------------------------*
+
+REPORT  zgh_demo1_sapworld
+NO STANDARD PAGE HEADING
+LINE-SIZE  80
+LINE-COUNT 65(0).
+
+DATA hello TYPE string.
+
+*&---------------------------------------------------------------------*
+* INCLUDES                                                             *
+*&---------------------------------------------------------------------*
+* INCLUDE zgh_demo1_sapworld_top .            " Global Data
+* INCLUDE zgh_demo1_sapworld_f01 .            " Subroutines
+
+
+*&---------------------------------------------------------------------*
+*  AT SELECTION-SCREEN                                           *
+*&---------------------------------------------------------------------*
+AT SELECTION-SCREEN.
+
+
+*&---------------------------------------------------------------------*
+*  INITIALIZATION                                                      *
+*&---------------------------------------------------------------------*
+INITIALIZATION.
+*  PERFORM initialization.
+
+*&---------------------------------------------------------------------*
+* START-OF-SELECTION                                                   *
+*&---------------------------------------------------------------------*
+START-OF-SELECTION.
+*  PERFORM get_data.
+*  PERFORM process_data.
+  hello = 'Welcome to SAP World'.
+
+*&---------------------------------------------------------------------*
+* END-OF-SELECTION                                                     *
+*&---------------------------------------------------------------------*
+END-OF-SELECTION.
+*  PERFORM display_alv.
+  WRITE hello.
