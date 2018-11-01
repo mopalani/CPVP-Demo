@@ -1,2 +1,2 @@
-# CPVP-Demo
+# abapCPVPDemo
 CPVP Demo Project
